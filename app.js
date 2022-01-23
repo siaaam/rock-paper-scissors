@@ -1,49 +1,48 @@
-//get a random number
-function getRandomNumber(){
-  let randomNumber = Math.floor(Math.random() * 3)
-  return randomNumber;
-}
+let computerCounter = 0;
+let playerCounter = 0;
 
+function game() {
+  for (let i = 1; i <= 5; i++) {
+    function computerSelection() {
+      let option = ['rock', 'paper', 'scessors'];
+      const randomNum = Math.floor(Math.random() * option.length);
+      return option[randomNum];
+    }
 
-// Initialize  variables;
-let values = ['Rock','Paper','Scissors']
-let computerSelection = values[getRandomNumber()].toLowerCase();
-let playerSelection;
-let counterForComputer = 0;
-let counterForPlayer = 0;
+    // console.log(computerSelection());
 
+    function playerSelection() {
+      return prompt().toLocaleLowerCase();
+    }
 
+    // variables:
 
-// Game logic
-function playRound(computer,player){
-  //check win for computer;
-  if(computer === 'rock' && player === 'scissors'  || computer === 'scissors' && player === 'paper' || computer === 'paper' && player === 'rock'){
-    console.log(`computer win! You Lost. computer: ${computer} - player: ${player}`);
-    return counterForComputer++;
-  } else if(computer === player){
-    console.log(`It's a tie. computer: ${computer} - player: ${player}`);
-    return counterForPlayer,counterForComputer;
+    let computerPlay = computerSelection();
+    let playerPlay = playerSelection();
+
+    function playRound(computer, player) {
+      // computer  win condition
+      if (
+        (computer === 'rock' && player === 'scessors') ||
+        (computer === 'scessors' && player === 'paper') ||
+        (computer === 'paper' && player === 'rock')
+      ) {
+        return `computer won.computer : ${computer} -  player : ${player}. computer : ${++computerCounter}`;
+      } else if (computer === player) {
+        return `match draw . computer : ${computer} -  player : ${player}`;
+      } else {
+        return `player won . computer : ${computer} -  player : ${player} . player: ${++playerCounter}`;
+      }
+    }
+    console.log(playRound(computerPlay, playerPlay));
+  }
+  if (computerCounter > playerCounter) {
+    console.log('computer won');
+  } else if (computerCounter === playerCounter) {
+    console.log('match draw');
   } else {
-    console.log(`You win! Computer Lost. computer: ${computer} - player: ${player}`)
-    return counterForPlayer++;
+    console.log('player won');
   }
 }
 
-
-
-// repeat games for 5 times;
-for(let i = 0;i <5;i++){
-    let computerSelection = values[getRandomNumber()].toLowerCase();
-    let playerSelection = prompt('Enter rock,paper or scissors').toLowerCase();
-    console.log(playRound(computerSelection,playerSelection))
-    console.log(`computer : ${counterForComputer}`)
-    console.log(`player : ${counterForPlayer}`)
-  }
-
-
-
-
-
-
-
-
+game();
