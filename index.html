@@ -4,11 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Rock-Paper-Scissors</title>
   </head>
   <body>
-    <h1>let's add some ui</h1>
+    <div class="counter-tracker">
+      <h3 class="computer-score">computer: 0</h3>
+      <h3 class="player-score">player: 0</h3>
+    </div>
 
-    <script src="./app.js"></script>
+    <div class="container">
+      <div class="buttons">
+        <button name="rock" value="rock">rock</button>
+        <button name="paper" value="paper">paper</button>
+        <button name="scessors" value="scessors">scessors</button>
+      </div>
+    </div>
+
+    <div class="text-block">
+      <h2 class="player-choice">player choose:</h2>
+      <h2 class="computer-choice">computer choose:</h2>
+      <h2 class="result">result:</h2>
+      <h2 class="final">Final:</h2>
+    </div>
+
+    <script src="./script.js"></script>
   </body>
 </html>

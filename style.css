@@ -1,0 +1,52 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: cadetblue;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 600px;
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+button {
+  background: cornflowerblue;
+  padding: 20px;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+h2 {
+  text-align: center;
+}
+h3 {
+  text-align: center;
+}
+
+.text-block {
+  margin-top: -100px;
+}
+
+.counter-tracker {
+  margin-top: 100px;
+  margin-bottom: -100px;
+}
